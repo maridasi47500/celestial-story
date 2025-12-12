@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @automationpage %>
+
+<div>
+  <%= link_to "Edit this automationpage", edit_automationpage_path(@automationpage) %> |
+  <%= link_to "Back to automationpages", automationpages_path %>
+
+  <%= button_to "Destroy this automationpage", @automationpage, method: :delete %>
+</div>

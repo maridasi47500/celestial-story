@@ -1,0 +1,37 @@
+<%= form_with(model: api) do |form| %>
+  <% if api.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(api.errors.count, "error") %> prohibited this api from being saved:</h2>
+
+      <ul>
+        <% api.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :link, style: "display: block" %>
+    <%= form.text_field :link %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div>
+    <%= form.label :automationpage_id, style: "display: block" %>
+    <%= form.number_field :automationpage_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

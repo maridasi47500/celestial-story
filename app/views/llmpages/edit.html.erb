@@ -1,0 +1,12 @@
+<% content_for :title, "Editing llmpage" %>
+
+<h1>Editing llmpage</h1>
+
+<%= render "form", llmpage: @llmpage %>
+
+<br>
+
+<div>
+  <%= link_to "Show this llmpage", @llmpage %> |
+  <%= link_to "Back to llmpages", llmpages_path %>
+</div>

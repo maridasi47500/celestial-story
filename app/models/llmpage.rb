@@ -1,0 +1,2 @@
+class Llmpage < ApplicationRecord
+end

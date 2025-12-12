@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @llm %>
+
+<div>
+  <%= link_to "Edit this llm", edit_llm_path(@llm) %> |
+  <%= link_to "Back to llms", llms_path %>
+
+  <%= button_to "Destroy this llm", @llm, method: :delete %>
+</div>

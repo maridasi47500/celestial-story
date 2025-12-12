@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Automationpages" %>
+
+<h1>Automationpages</h1>
+
+<div id="automationpages">
+  <% @automationpages.each do |automationpage| %>
+    <%= render automationpage %>
+    <p>
+      <%= link_to "Show this automationpage", automationpage %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New automationpage", new_automationpage_path %>

@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Llms" %>
+
+<h1>Llms</h1>
+
+<div id="llms">
+  <% @llms.each do |llm| %>
+    <%= render llm %>
+    <p>
+      <%= link_to "Show this llm", llm %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New llm", new_llm_path %>

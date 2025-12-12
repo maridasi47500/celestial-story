@@ -1,0 +1,27 @@
+<%= form_with(model: automationpage) do |form| %>
+  <% if automationpage.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(automationpage.errors.count, "error") %> prohibited this automationpage from being saved:</h2>
+
+      <ul>
+        <% automationpage.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :link, style: "display: block" %>
+    <%= form.text_field :link %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

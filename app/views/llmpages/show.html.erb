@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @llmpage %>
+
+<div>
+  <%= link_to "Edit this llmpage", edit_llmpage_path(@llmpage) %> |
+  <%= link_to "Back to llmpages", llmpages_path %>
+
+  <%= button_to "Destroy this llmpage", @llmpage, method: :delete %>
+</div>
