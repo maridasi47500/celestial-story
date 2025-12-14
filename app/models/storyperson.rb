@@ -1,0 +1,2 @@
+class Storyperson < ApplicationRecord
+end
