@@ -11,3 +11,5 @@
 - online database
 - fausse videos
 # celestial-story
+- user has many accounts and people
+- 

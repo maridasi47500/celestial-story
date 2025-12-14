@@ -18,7 +18,7 @@
 
   <div>
     <%= form.label :mytype_id, style: "display: block" %>
-    <%= form.number_field :mytype_id %>
+    <%= form.select :mytype_id, Mytype.all.collect{|h|[h.name, h.id]} %>
   </div>
 
   <div>

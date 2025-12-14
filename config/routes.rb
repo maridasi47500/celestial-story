@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :countries
+      devise_for :users, controllers: {
+        sessions: 'users/sessions'
+      }
+
   resources :automationpages
   resources :apis
   resources :llmpages
@@ -15,5 +20,5 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   # Defines the root path route ("/")
-  # root "stories#index"
+  root "stories#index"
 end

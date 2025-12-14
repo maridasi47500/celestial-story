@@ -23,6 +23,23 @@
   </head>
 
   <body>
+<%if user_signed_in?%>
+      <li class="nav-item">
+        <a class="nav-link" href="<%=edit_user_registration_path%>">edit my profile</a>
+    
+      </li>
+      <li class="nav-item">
+<%=button_to "Log out", destroy_user_session_path, :method => :delete %>
+
+      </li>
+<%else%> 
+<%=button_to "se connecter", new_user_session_path, :method => :get %>
+<%end%>
+
+<%=link_to "voir toutes les llm", llms_path%>
+<%=link_to "voir toutes les pages de llm", llmpages_path%>
+<%=link_to "voir toutes les automation/API", apis_path%>
+<%=link_to "voir toutes les pages de automation", automationpages_path%>
     <%= yield %>
   </body>
 </html>

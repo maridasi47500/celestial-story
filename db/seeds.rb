@@ -7,3 +7,7 @@
   ["video","photo","text","code"].each do |genre_name|
     Mytype.find_or_create_by!(name: genre_name)
   end
+ISO3166::Country.all_translated.each do |country|
+    mycountry=Country.find_or_create_by(name: country)
+end
+
