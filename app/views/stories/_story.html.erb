@@ -6,7 +6,11 @@
 
   <p>
     <strong>Mytype:</strong>
-    <%= story.mytype_id %>
+    <%= story.mytype.name %>
+  </p>
+  <p>
+story with
+    <%= story.storypeople.map(&:name).to_sentence %>
   </p>
 
 </div>

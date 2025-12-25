@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_12_14_025905) do
+ActiveRecord::Schema[8.0].define(version: 2025_12_25_011217) do
   create_table "apis", force: :cascade do |t|
     t.string "name"
     t.string "link"
@@ -57,6 +57,22 @@ ActiveRecord::Schema[8.0].define(version: 2025_12_14_025905) do
   create_table "stories", force: :cascade do |t|
     t.string "name"
     t.integer "mytype_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "description"
+    t.string "content"
+  end
+
+  create_table "storyhaspeople", force: :cascade do |t|
+    t.integer "story_id"
+    t.integer "storyperson_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "storypeople", force: :cascade do |t|
+    t.string "name"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

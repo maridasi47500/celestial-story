@@ -1,0 +1,2 @@
+class Storyhasperson < ApplicationRecord
+end

@@ -15,13 +15,45 @@
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
   </div>
+  <div>
+    <%= form.label :storyperson_ids, style: "display: block" %>
+<%=form.collection_check_boxes(:storyperson_ids, current_user.try(:storypeople).to_a, :id, :name) do |b|%>
+
+  <%=b.label(class: "check_box") do%> 
+<%=b.check_box(class: "check_box") %>
+<%=b.text%>
+<%end%>
+<%end%>
+  </div>
 
   <div>
     <%= form.label :mytype_id, style: "display: block" %>
-    <%= form.select :mytype_id, Mytype.all.collect{|h|[h.name, h.id]} %>
+    <%= form.select :mytype_id, [""]+Mytype.all.collect{|h|[h.name, h.id]}, {}, {onchange: "hello();"} %>
   </div>
+  <div>
+    <%= form.label :description, "describe what this story is about", style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
+  <div>
+    <%= form.label :content, style: "display: block" %>
+    <%= form.text_area :content %>
+  </div>
+
 
   <div>
     <%= form.submit %>
   </div>
 <% end %>
+<script>
+function hello(){
+if (story_mytype_id.value==="<%=Mytype.all.select{|h|h.name=="text"}[0].id%>") {
+story_content.outerHTML="<textarea name=\"story[content]\" id=\"story_content\"></textarea>";
+} else if (story_mytype_id.value==="<%=Mytype.all.select{|h|h.name=="code"}[0].id%>") {
+story_content.outerHTML="<textarea name=\"story[content]\" id=\"story_content\"></textarea>";
+} else if (story_mytype_id.value==="<%=Mytype.all.select{|h|h.name=="photo"}[0].id%>") {
+story_content.outerHTML="<input name=\"story[content]\" type=\"file\" id=\"story_content\" />";
+} else if (story_mytype_id.value==="<%=Mytype.all.select{|h|h.name=="video"}[0].id%>") {
+story_content.outerHTML="<input name=\"story[content]\" type=\"file\" id=\"story_content\" />";
+}
+}
+</script>
